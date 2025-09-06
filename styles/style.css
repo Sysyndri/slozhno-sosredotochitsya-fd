@@ -11,6 +11,8 @@
   font-weight: normal;
   font-size: var(--main_font_size, 18px);
   padding: var(--main_page_padding, 10px);
+  display: grid;
+  gap: 40px;
 }
 
 .header {
@@ -23,7 +25,9 @@
 }
 
 .header::after,
-.header::before {
+.header::before,
+.footer::after,
+.footer::before {
   content: "";
   color: var(--accent-color, #ff0070);
   width: 25px;
@@ -31,14 +35,16 @@
   position: absolute;
 }
 
-.header::after {
+.header::after,
+.footer::after {
   border-bottom: 1px solid currentColor;
   border-left: 1px solid currentColor;
   bottom: 0;
   left: 0;
 }
 
-.header::before {
+.header::before,
+.footer::before {
   border-top: 1px solid currentColor;
   border-right: 1px solid currentColor;
   top: 0;
@@ -90,11 +96,82 @@
   line-height: 82.5%;
 }
 
-.header__paragraph {
+.header__text {
   justify-self: center;
   align-self: center;
+}
+
+.title_decor {
   color: var(--main_back_color_dark, #000028);
   font-weight: bold;
   line-height: 130%;
   background-color: var(--accent-color, #ff0070);
+}
+
+.main {
+  display: grid;
+  gap: 50px;
+}
+
+.section__title {
+  color: var(--accent-color, #ff0070);
+  font-size: 1em;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+  word-spacing: 1.1em;
+}
+
+.card__title {
+  color: var(--main_back_color_dark, #000028);
+  font-size: 1em;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 130%;
+}
+
+.card__list {
+  margin-block-start: 1.1em;
+  display: grid;
+  gap: 20px;
+}
+
+.card__item {
+  display: grid;
+  gap: 20px;
+}
+
+.card__text {
+  color: var(--dark_text_color, #f1b2ce);
+  font-size: 1em;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+}
+
+.card__title-accent {
+  font-weight: bold;
+}
+
+.gallary__list {
+  margin-block-start: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.gallery_img {
+  width: 100%;
+}
+
+.footer {
+  block-size: 100vh;
+  min-block-size: 667px;
+  display: grid;
+  position: relative;
+}
+
+.footer-title {
+  text-shadow: 2px 2px 0 var(--accent-color);
+  align-self: center;
 }

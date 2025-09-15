@@ -7,8 +7,8 @@
   font-family: var(--main_font, Arial);
   font-weight: normal;
   font-size: var(--main_font_size, 18px);
-  background-color: var(--main_back_color_dark);
-  background-image: var(--main_back_image_dark);
+  background-color: var(--main_back_color, #000028);
+  background-image: var(--main_back_image, url(../images/cover-image-dark.png));
   background-position: center;
   background-size: 100%;
   background-attachment: fixed;
@@ -29,7 +29,7 @@
   position: absolute;
   width: 25px;
   height: 25px;
-  color: var(--accent-color, #ff0070);
+  color: var(--accent_color, #ff0070);
 }
 
 .decorated-zone::after {
@@ -51,7 +51,7 @@
   justify-self: right;
   padding-inline-end: 28px;
   padding-block-start: 3px;
-  color: var(--accent-color, #ff0070);
+  color: var(--accent_color, #ff0070);
   text-transform: uppercase;
 }
 
@@ -63,8 +63,8 @@
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  box-shadow: 0 0 4px var(--accent-color, #ff0070);
-  background-color: var(--accent-color, #ff0070);
+  box-shadow: 0 0 4px currentColor;
+  background-color: currentColor;
 }
 
 .header__theme-menu {
@@ -81,7 +81,7 @@
   margin: 0;
   border: none;
   padding: 1px 13px;
-  color: var(--accent-color, #ff0070);
+  color: var(--accent_color, #ff0070);
   letter-spacing: 2px;
   text-transform: lowercase;
   background-color: transparent;
@@ -89,7 +89,15 @@
 }
 
 .header__theme-menu-button_active {
-  border: 1px solid var(--accent-color, #ff0070);
+  outline: 1px solid currentColor;
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--button_hover_color, rgb(255 0 112 / 0.4));
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid currentColor;
 }
 
 .main-title {
@@ -99,7 +107,7 @@
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 78.5%;
   letter-spacing: 20px;
-  text-shadow: 4px 4px 0 var(--accent-color);
+  text-shadow: 4px 4px 0 var(--title_decor_color, #ff0070);
 }
 
 .header__text {
@@ -109,10 +117,10 @@
 }
 
 .title_decor {
-  color: var(--main_back_color_dark, #000028);
+  color: var(--sub_title_color, #000028);
   font-weight: bold;
   line-height: 130%;
-  background-color: var(--accent-color, #ff0070);
+  background-color: var(--title_decor_color, #ff0070);
 }
 
 .main {
@@ -126,7 +134,7 @@
 }
 
 .section__title {
-  color: var(--accent-color, #ff0070);
+  color: var(--title_color, #ff0070);
   font-weight: 700;
   font-size: 1em;
   font-style: normal;
@@ -135,11 +143,15 @@
 }
 
 .card__title {
-  color: var(--main_back_color_dark, #000028);
+  color: var(--sub_title_color, #000028);
   font-weight: bold;
   font-size: 1em;
   font-style: normal;
   line-height: 130%;
+}
+
+.no-accent-title {
+  font-weight: normal;
 }
 
 .card__title_dop-info {
@@ -160,15 +172,24 @@
 }
 
 .card__text {
-  color: var(--dark_text_color, #f1b2ce);
+  color: var(--text_color, #f1b2ce);
   font-weight: 400;
   font-size: 1em;
   font-style: normal;
   line-height: 130%;
 }
 
-.card__title-accent {
-  font-weight: bold;
+.card__link {
+  text-decoration: none;
+  text-shadow: 1px 1px 0 var(--title_decor_color, #ff0070);
+}
+
+.card__link:hover {
+  border-bottom: 1px solid currentColor;
+}
+
+.card__link:focus-visible {
+  outline: 1px solid currentColor;
 }
 
 .gallary {
@@ -204,7 +225,7 @@
 .footer-title {
   align-self: center;
   letter-spacing: 11px;
-  text-shadow: 4px 4px 0 var(--accent-color);
+  text-shadow: 2px 2px 0 var(--accent_color, #ff0070);
 }
 
 @media (width >= 768px) {
@@ -222,6 +243,7 @@
     justify-self: left;
     margin-inline-start: -20px;
     margin-block-start: 0.75em;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     letter-spacing: 9px;
     word-spacing: 60px;
   }

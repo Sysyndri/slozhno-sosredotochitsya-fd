@@ -12,12 +12,13 @@
   --accent_color: #353430;
   --main_title_color: #ffc2e6;
   --main_back_image: url(../images/cover-image-light.png);
-  --main_back_color: #ff8dcb;
+  --main_back_color: #fff1f7;
   --title_color: #353430;
   --sub_title_color: #353430;
   --text_color: #353430;
   --title_decor_color: #ff8dcb;
   --button_hover_color: rgba(50 49 45 / 0.4);
+  --decorate_turn: hidden;
 }
 
 @media (prefers-color-scheme: light) {
@@ -26,15 +27,12 @@
     --accent_color: #353430;
     --main_title_color: #ffc2e6;
     --main_back_image: url(../images/cover-image-light.png);
-    --main_back_color: #ff8dcb;
+    --main_back_color: #fff1f7;
     --title_color: #353430;
     --sub_title_color: #353430;
     --text_color: #353430;
     --title_decor_color: #ff8dcb;
     --button_hover_color: rgba(50 49 45 / 0.4);
-  }
-
-  .header__decor {
-    display: none;
+    --decorate_turn: hidden;
   }
 }

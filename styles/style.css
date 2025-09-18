@@ -1,9 +1,6 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
   display: grid;
   gap: 30px;
-  padding: var(--main_page_padding, 10px);
   font-family: var(--main_font, Arial);
   font-weight: normal;
   font-size: var(--main_font_size, 18px);
@@ -19,6 +16,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: min-content repeat(3, 1fr);
+  padding: var(--main_page_padding, 10px);
   block-size: 100vh;
   min-block-size: 668px;
 }
@@ -33,26 +31,27 @@
 }
 
 .decorated-zone::after {
-  bottom: 20px;
-  left: 0;
+  bottom: var(--main_page_padding, 10px);
+  left: var(--main_page_padding, 10px);
   border-bottom: 1px solid currentColor;
   border-left: 1px solid currentColor;
 }
 
 .decorated-zone::before {
-  top: 0;
-  right: 3px;
+  top: var(--main_page_padding, 10px);
+  right: var(--main_page_padding, 10px);
   border-top: 1px solid currentColor;
   border-right: 1px solid currentColor;
 }
 
 .header__decor {
   position: relative;
+  visibility: var(--decorate_turn, visible);
   justify-self: right;
-  padding-inline-end: 28px;
-  padding-block-start: 3px;
+  padding-inline-end: 1.6em;
   color: var(--accent_color, #ff0070);
   text-transform: uppercase;
+  -webkit-padding-end: 1.6em;
 }
 
 .header__decor::after {
@@ -69,20 +68,20 @@
 
 .header__theme-menu {
   justify-self: right;
-  margin-block-start: 2.25em;
+  margin-block-start: 2.23em;
+  -webkit-margin-before: 2.23em;
 }
 
 .header__theme-menu-list {
   display: grid;
-  gap: 13px;
+  gap: 0.8em;
 }
 
 .header__theme-menu-button {
   margin: 0;
   border: none;
-  padding: 1px 13px;
+  padding: 0 14px;
   color: var(--accent_color, #ff0070);
-  letter-spacing: 2px;
   text-transform: lowercase;
   background-color: transparent;
   cursor: pointer;
@@ -105,15 +104,15 @@
   color: var(--main_title_color, #db00ff);
   font-weight: bold;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  line-height: 78.5%;
-  letter-spacing: 20px;
+  line-height: 81%;
   text-shadow: 4px 4px 0 var(--title_decor_color, #ff0070);
 }
 
 .header__text {
   align-self: self-start;
-  width: 355px;
-  margin-block-start: 1.3em;
+  width: 19.8em;
+  margin-block-start: 1.9em;
+  -webkit-margin-before: 1.9em;
 }
 
 .title_decor {
@@ -126,11 +125,15 @@
 .main {
   display: grid;
   gap: 50px;
+  padding: var(--main_page_padding, 10px);
+  background-color: var(--main_back_color, #000028);
 }
 
 .section {
   display: grid;
   gap: 20px;
+  max-width: 19.7em;
+  margin: 0 auto;
 }
 
 .section__title {
@@ -139,7 +142,6 @@
   font-size: 1em;
   font-style: normal;
   line-height: 130%;
-  word-spacing: 1.2em;
 }
 
 .card__title {
@@ -155,9 +157,10 @@
 }
 
 .card__title_dop-info {
+  margin-block-end: 1em;
   font-weight: bold;
-  letter-spacing: 3px;
   text-wrap: wrap;
+  -webkit-margin-after: 1em;
 }
 
 .card__list {
@@ -168,7 +171,6 @@
 .card__item {
   display: grid;
   gap: 10px;
-  letter-spacing: 2.4px;
 }
 
 .card__text {
@@ -201,6 +203,7 @@
   grid-template-columns: 1fr;
   gap: 6px;
   margin-block-start: 10px;
+  -webkit-margin-before: 10px;
 }
 
 .gallery_img {
@@ -210,21 +213,22 @@
 .footer {
   position: relative;
   display: grid;
+  padding: var(--main_page_padding, 10px);
+  background-color: var(--main_back_color, #000028);
   block-size: 100vh;
   min-block-size: 667px;
 }
 
 .footer.decorated-zone::before {
-  top: 16px;
+  top: calc(var(--main_page_padding, 10px) - 2px);
 }
 
 .footer.decorated-zone::after {
-  bottom: 5px;
+  bottom: calc(var(--main_page_padding, 10px) + 4px);
 }
 
 .footer-title {
   align-self: center;
-  letter-spacing: 11px;
   text-shadow: 2px 2px 0 var(--accent_color, #ff0070);
 }
 
@@ -236,71 +240,65 @@
 
   .header__theme-menu {
     align-self: center;
-    margin-block-start: 3.5em;
+    margin-block-start: 4em;
+    -webkit-margin-before: 4em;
   }
 
   .main-title {
     justify-self: left;
     margin-inline-start: -20px;
-    margin-block-start: 0.75em;
+    margin-block-start: 0.85em;
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    letter-spacing: 9px;
-    word-spacing: 60px;
+    -webkit-margin-start: -20px;
+    -webkit-margin-before: 0.85em;
   }
 
   .header__text {
     justify-self: right;
-    width: 364px;
-    margin-block-start: 0.8em;
-    letter-spacing: 1px;
-    word-spacing: 9px;
-  }
-
-  .decorated-zone::after {
-    bottom: 40px;
+    width: 20.2em;
+    margin-block-start: 2.2em;
+    -webkit-margin-before: 2.2em;
   }
 
   .section {
     grid-template-columns: 1fr 2fr;
+    max-width: 41em;
     padding-block-start: 10px;
+    -webkit-padding-before: 10px;
+  }
+
+  .section__title {
+    max-width: 12em;
   }
 
   .another__section-grid-column {
     grid-template-columns: 1fr;
     padding-block-start: 30px;
-  }
-
-  .section__title {
-    max-width: 220px;
-    word-wrap: break-word;
+    -webkit-padding-before: 30px;
   }
 
   .section_five-tips {
-    padding-block-start: 30px;
-  }
-
-  .card__title_dop-info {
-    letter-spacing: 2px;
-  }
-
-  .section_five-tips__content > .card__list {
     margin-block-start: 20px;
+    -webkit-margin-before: 20px;
   }
 
   .gallary {
     grid-template-columns: 1fr;
-    margin-block-start: 19px;
+    margin-block-start: 1.1em;
+    -webkit-margin-before: 1.1em;
   }
 
   .gallary__list {
     grid-template-columns: repeat(4, 1fr) 229px;
-    grid-template-rows: 192px 230px 1fr;
+    grid-template-rows: 192px 230px 230px;
     grid-auto-flow: dense;
     gap: 20px;
-    margin-block-start: 19px;
+    margin-block-start: 1.1em;
+    -webkit-margin-before: 1.1em;
   }
 
   .gallery_img {
+    -o-object-fit: cover;
     object-fit: cover;
     inline-size: 100%;
     block-size: 100%;
@@ -333,15 +331,19 @@
 
   .footer-title {
     justify-self: center;
+    align-self: center;
+    margin-inline-start: initial;
+    margin-block-start: 12px;
+    -webkit-margin-before: 12px;
+    -webkit-margin-start: initial;
   }
 
   .footer.decorated-zone::before {
-    top: 45px;
-    right: 0;
+    top: calc(var(--main_page_padding, 20px) + 6px);
   }
 
   .footer.decorated-zone::after {
-    bottom: -5px;
+    bottom: calc(var(--main_page_padding, 20px) - 5px);
   }
 }
 
@@ -355,19 +357,23 @@
     grid-column: 1/2;
     grid-row: 1/1;
     justify-self: center;
-    align-self: self-start;
-    margin-inline-start: 65px;
+    align-self: center;
+    margin-inline-start: 66px;
     margin-block-start: initial;
+    -webkit-margin-start: 66px;
+    -webkit-margin-before: initial;
   }
 
   .header__theme-menu-list {
     display: flex;
+    gap: 11px;
   }
 
   .main-title {
     grid-row: 3/3;
     align-self: center;
-    margin-block-start: initial;
+    margin-block-start: 0;
+    -webkit-margin-before: 0;
   }
 
   .header__text {
@@ -375,41 +381,43 @@
     grid-row: 4/4;
     justify-self: right;
     min-width: 491px;
-    margin-block-start: 23px;
+    margin-block-start: 49px;
+    -webkit-margin-before: 49px;
+  }
+
+  .section {
+    gap: 10px;
+    max-width: 54.6em;
   }
 
   .section__title {
     max-width: 310px;
   }
 
-  .another__section-grid-column > .card__list {
+  .card__change {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .another__section-grid-column > .card__list > .card__item {
-    grid-template-rows: min-content 1fr;
+  .card__change .card__item {
+    align-self: start;
+    padding: 10px 0;
   }
 
-  .another__section-grid-column > .card__list > .card__item > .card__title {
-    align-self: self-start;
-  }
-
-  .section_five-tips__content .card__list .card__item .card__text {
-    letter-spacing: initial;
-    word-spacing: 14px;
-  }
-
-  .gallary {
-    margin-block-start: 42px;
+  .section_five-tips {
+    margin-block-start: 11px;
+    -webkit-margin-before: 11px;
   }
 
   .gallary__list {
     grid-template-columns: repeat(4, 1fr) 314px;
     grid-template-rows: 260px 315px 415px;
+    margin-block-start: 10px;
+    -webkit-margin-before: 10px;
   }
 
   .footer-title {
     grid-row: initial;
-    margin-block-start: 60px;
+    margin-block-start: 12px;
+    -webkit-margin-before: 12px;
   }
 }

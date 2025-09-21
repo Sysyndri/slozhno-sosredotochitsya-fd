@@ -19,6 +19,7 @@
   --title_decor_color: #ff8dcb;
   --button_hover_color: rgba(50 49 45 / 0.4);
   --decorate_turn: hidden;
+  --title_decor_color: #ff8dcb;
 }
 
 @media (prefers-color-scheme: light) {
@@ -34,5 +35,6 @@
     --title_decor_color: #ff8dcb;
     --button_hover_color: rgba(50 49 45 / 0.4);
     --decorate_turn: hidden;
+    --title_decor_color: #ff8dcb;
   }
 }

@@ -1,6 +1,7 @@
 .page {
   display: grid;
-  gap: 30px;
+  gap: 40px;
+  padding: 0 var(--main_page_padding, 10px);
   font-family: var(--main_font, monospace);
   font-weight: normal;
   font-size: var(--main_font_size, 18px);
@@ -16,7 +17,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: min-content repeat(3, 1fr);
-  padding: var(--main_page_padding, 10px);
+  padding-block-start: var(--main_page_padding, 10px);
   block-size: 100vh;
   min-block-size: 668px;
 }
@@ -32,14 +33,14 @@
 
 .decorated-zone::after {
   bottom: var(--main_page_padding, 10px);
-  left: var(--main_page_padding, 10px);
+  left: 0;
   border-bottom: 1px solid currentColor;
   border-left: 1px solid currentColor;
 }
 
 .decorated-zone::before {
   top: var(--main_page_padding, 10px);
-  right: var(--main_page_padding, 10px);
+  right: 0;
   border-top: 1px solid currentColor;
   border-right: 1px solid currentColor;
 }
@@ -68,20 +69,21 @@
 
 .header__theme-menu {
   justify-self: right;
-  margin-block-start: 2.23em;
-  -webkit-margin-before: 2.23em;
+  margin-block-start: 2.4em;
+  -webkit-margin-before: 2.4em;
 }
 
 .header__theme-menu-list {
   display: grid;
-  gap: 0.8em;
+  gap: 0.55em;
 }
 
 .header__theme-menu-button {
   margin: 0;
   border: none;
-  padding: 0 14px;
+  padding: 3px 13px;
   color: var(--accent_color, #ff0070);
+  line-height: 100%;
   text-transform: lowercase;
   background-color: transparent;
   transition: outline 0.5s ease-in-out;
@@ -101,11 +103,10 @@
 }
 
 .main-title {
-  justify-self: center;
   color: var(--main_title_color, #db00ff);
   font-weight: bold;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  line-height: 81%;
+  line-height: 79%;
   text-shadow: 4px 4px 0 var(--title_decor_color, #ff0070);
 }
 
@@ -113,8 +114,8 @@
   align-self: self-start;
   width: 100%;
   max-width: 19.8em;
-  margin-block-start: 1.9em;
-  -webkit-margin-before: 1.9em;
+  margin-block-start: 1.6em;
+  -webkit-margin-before: 1.6em;
 }
 
 .title_decor {
@@ -127,7 +128,6 @@
 .main {
   display: grid;
   gap: 50px;
-  padding: var(--main_page_padding, 10px);
 }
 
 .section {
@@ -195,15 +195,14 @@
 }
 
 .gallary {
-  gap: 0;
+  gap: 10px;
 }
 
 .gallary__list {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 6px;
-  margin-block-start: 10px;
-  -webkit-margin-before: 10px;
+  gap: 10px;
+  font-size: 0;
 }
 
 .gallery_img {
@@ -217,22 +216,13 @@
 .footer {
   position: relative;
   display: grid;
-  padding: var(--main_page_padding, 10px);
   block-size: 100vh;
   min-block-size: 667px;
 }
 
-.footer.decorated-zone::before {
-  top: calc(var(--main_page_padding, 10px) - 2px);
-}
-
-.footer.decorated-zone::after {
-  bottom: calc(var(--main_page_padding, 10px) + 4px);
-}
-
 .footer-title {
+  justify-self: center;
   align-self: center;
-  margin-block-start: -12px;
   text-shadow: 2px 2px 0 var(--title_decor_color, #ff0070);
 }
 
@@ -242,33 +232,42 @@
     --main_page_padding: 20px;
   }
 
+  .page {
+    gap: 60px;
+  }
+
   .header__theme-menu {
     align-self: center;
-    margin-block-start: 4em;
-    -webkit-margin-before: 4em;
+    margin-block-start: 66px;
+    -webkit-margin-before: 66px;
+  }
+
+  .header__theme-menu-list {
+    gap: 0.6em;
+  }
+
+  .main {
+    gap: 80px;
   }
 
   .main-title {
     justify-self: left;
     margin-inline-start: -20px;
-    margin-block-start: 0.85em;
+    margin-block-start: 0.8em;
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     -webkit-margin-start: -20px;
-    -webkit-margin-before: 0.85em;
+    -webkit-margin-before: 0.8em;
   }
 
   .header__text {
     justify-self: right;
-    width: 100%;
-    max-width: 20.2em;
-    margin-block-start: 2.2em;
-    -webkit-margin-before: 2.2em;
+    max-width: 20.21em;
+    margin-block-start: 1.5em;
+    -webkit-margin-before: 1.5em;
   }
 
   .section {
-    grid-template-columns: 1fr 2fr;
-    padding-block-start: 10px;
-    -webkit-padding-before: 10px;
+    grid-template-columns: 32.4% 1fr;
   }
 
   .section__title {
@@ -278,28 +277,17 @@
 
   .another__section-grid-column {
     grid-template-columns: 1fr;
-    padding-block-start: 30px;
-    -webkit-padding-before: 30px;
-  }
-
-  .section_five-tips {
-    margin-block-start: 20px;
-    -webkit-margin-before: 20px;
   }
 
   .gallary {
     grid-template-columns: 1fr;
-    margin-block-start: 1.1em;
-    -webkit-margin-before: 1.1em;
+    gap: 21px;
   }
 
   .gallary__list {
     grid-template-columns: repeat(4, 1fr) 229px;
     grid-auto-flow: dense;
-    row-gap: 15px;
-    column-gap: 20px;
-    margin-block-start: 1.1em;
-    -webkit-margin-before: 1.1em;
+    gap: 20px;
   }
 
   .gallery__item:nth-child(1) {
@@ -328,19 +316,8 @@
 
   .footer-title {
     justify-self: center;
-    align-self: center;
-    margin-inline-start: initial;
-    margin-block-start: 12px;
-    -webkit-margin-before: 12px;
-    -webkit-margin-start: initial;
-  }
-
-  .footer.decorated-zone::before {
-    top: calc(var(--main_page_padding, 20px) + 6px);
-  }
-
-  .footer.decorated-zone::after {
-    bottom: calc(var(--main_page_padding, 20px) - 5px);
+    margin-inline-start: 0;
+    margin-block-start: 0;
   }
 }
 
@@ -354,9 +331,9 @@
     grid-column: 1/2;
     grid-row: 1/1;
     justify-self: center;
-    margin-inline-start: 66px;
+    margin-inline-start: 60px;
     margin-block-start: initial;
-    -webkit-margin-start: 66px;
+    -webkit-margin-start: 60px;
     -webkit-margin-before: initial;
   }
 
@@ -367,25 +344,31 @@
 
   .main-title {
     grid-row: 3/3;
-    margin-block-start: 0.28em;
-    -webkit-margin-before: 0.28em;
+    margin-block-start: 0.24em;
+    -webkit-margin-before: 0.24em;
   }
 
   .header__text {
     grid-column: span 2;
     grid-row: 4/4;
     max-width: 491px;
-    margin-block-start: 49px;
-    -webkit-margin-before: 49px;
+    margin-block-start: 37px;
+    -webkit-margin-before: 37px;
   }
 
   .section {
-    gap: 10px;
+    grid-template-columns: 32% 1fr;
     max-width: calc(100vw - 40px);
   }
 
+  /* Нужно переопределение, из-за того, что в section меняю значения grid-template-columns */
+
+  .another__section-grid-column {
+    grid-template-columns: 1fr;
+  }
+
   .section__title {
-    max-width: 310px;
+    max-inline-size: 313px;
   }
 
   .card__change {
@@ -394,24 +377,21 @@
 
   .card__change .card__item {
     align-self: start;
-    padding: 10px 0;
   }
 
-  .section_five-tips {
-    margin-block-start: 11px;
-    -webkit-margin-before: 11px;
+  /* Нужно переопределение, из-за того, что в section меняю значения grid-template-columns */
+
+  .gallary {
+    grid-template-columns: 1fr;
   }
 
   .gallary__list {
     grid-template-columns: repeat(4, 1fr) 314px;
-    row-gap: 13px;
-    margin-block-start: 10px;
-    -webkit-margin-before: 10px;
+    gap: 20px;
   }
 
   .footer-title {
     grid-row: initial;
-    margin-block-start: 22px;
-    -webkit-margin-before: 22px;
+    margin-block-start: 0;
   }
 }
